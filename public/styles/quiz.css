@@ -1,0 +1,24 @@
+body, html {
+    margin: 0;
+    color: white;
+    height: 100vh;
+    background-repeat: no-repeat;
+    scroll-behavior: smooth;
+    background-image: linear-gradient(to top, #511790 0%, #2b5876 40%);
+  }
+
+.questionDis {
+    font-size: 40px;
+}
+
+.btn {
+    font-size: 30px;
+    display: block;
+    background-color: #76452b;
+    border: none;
+}
+
+.btn:hover {
+    background-color: #511790;
+    cursor: pointer;
+}

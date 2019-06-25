@@ -1,0 +1,96 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand logo" href="#">Pub Quiz Admin</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+            <a class="nav-item nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
+
+        </div>
+    </div>
+</nav>
+
+<div class="controls">
+    <div class="sidebar">
+        <nav class="sidebar-nav">
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">
+                        Welcome, Scott
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        Dashboard
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        Teams:
+                    </a>
+                </li>
+                {{#each teams}}
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        {{this.id}}. {{this.teamName}} Score:{{this.score}}
+                    </a>
+                </li>
+
+                {{/each}}
+            </ul>
+        </nav>
+    </div>
+
+    <div class="container-fluid">
+        <div class="card mt-3">
+            <div class="card-header">
+                Add a question!
+            </div>
+            <div class="card-body">
+                <button type="button" id="generateQuest" class="btn btn-primary
+                mb-3 round">Generate Questions</button>
+                <hr>
+                <form action="">
+                    <div class="form-group">
+                        <label for="question">Add Questions</label>
+                        <div class="form-group">
+                            <label for="question">Question</label>
+                            <input type="text" class="form-control" id="newQuestion" aria-describedby="userQuestion">
+                        </div>
+                        <div class="form-group adminChoice">
+                            <label for="question">A: </label>
+                            <input type="text" class="form-control" id="choiceA" aria-describedby="choice">
+                            <label for="question">B: </label>
+                            <input type="text" class="form-control" id="choiceB" aria-describedby="choice">
+                            <label for="question">C: </label>
+                            <input type="text" class="form-control" id="choiceC" aria-describedby="choice">
+                            <label for="question">D: </label>
+                            <input type="text" class="form-control" id="choiceD" aria-describedby="choice">
+                            <label for="question">Correct Choice: </label>
+                            <input type="text" class="form-control" id="correctChoice" aria-describedby="choice">
+                            <button type="button" class="btn btn-primary mt-3" id="adminQuestion">Add</button>
+                        </div>
+                </form>
+            </div>
+        </div>
+        <div class="card mt-3">
+            <div class="card-header">
+                Questions
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Questions you are adding:</h5>
+                <p class="card-text"> </p>
+                <a href="#" class="btn btn-primary" id="subQuestion">Submit</a>
+            </div>
+        </div>
+        <a href="#" style="position: absolute; top: 1500px" class="btn btn-primary" id="resetGame">Reset Game</a>
+    </div>
+
+
+</div>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="/js/admin.js"></script>
